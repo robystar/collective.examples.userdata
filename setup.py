@@ -25,7 +25,7 @@ setup(name='collective.examples.userdata',
       zip_safe=False,
       install_requires=[
           'setuptools',
-          'plone.app.users >= 1.0b7',
+          'plone.app.users >= 2.0',
           # -*- Extra requirements: -*-
       ],
       entry_points="""
