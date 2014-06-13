@@ -4,62 +4,58 @@ from plone.app.users.browser.personalpreferences import UserDataPanelAdapter
 class EnhancedUserDataPanelAdapter(UserDataPanelAdapter):
     """
     """
-    def get_firstname(self):
-        return self.context.getProperty('firstname', '')
-    def set_firstname(self, value):
-        return self.context.setMemberProperties({'firstname': value})
-    firstname = property(get_firstname, set_firstname)
-
-    def get_lastname(self):
-        return self.context.getProperty('lastname', '')
-    def set_lastname(self, value):
-        return self.context.setMemberProperties({'lastname': value})
-    lastname = property(get_lastname, set_lastname)
-
-    def get_gender(self):
-        return self.context.getProperty('gender', '')
-    def set_gender(self, value):
-        return self.context.setMemberProperties({'gender': value})
-    gender = property(get_gender, set_gender)
-
-    def get_birthdate(self):
-        return self.context.getProperty('birthdate', '')
-    def set_birthdate(self, value):
-        return self.context.setMemberProperties({'birthdate': value})
-    birthdate = property(get_birthdate, set_birthdate)
-
-    def get_birthyear(self):
-        return self.context.getProperty('birthyear', '')
-    def set_birthyear(self, value):
-        return self.context.setMemberProperties({'birthyear': value})
-    birthyear = property(get_birthyear, set_birthyear)
-
-    def get_city(self):
-        return self.context.getProperty('city', '')
-    def set_city(self, value):
-        return self.context.setMemberProperties({'city': value})
-    city = property(get_city, set_city)
-
-    def get_country(self):
-        return self.context.getProperty('country', '')
-    def set_country(self, value):
-        return self.context.setMemberProperties({'country': value})
-    country = property(get_country, set_country)
-
-    def get_phone(self):
-        return self.context.getProperty('phone', '')
-    def set_phone(self, value):
-        return self.context.setMemberProperties({'phone': value})
-    phone = property(get_phone, set_phone)
-
-    def get_newsletter(self):
-        return self.context.getProperty('newsletter', '')
-    def set_newsletter(self, value):
-        return self.context.setMemberProperties({'newsletter': value})
-    newsletter = property(get_newsletter, set_newsletter)
-
-    def get_accept(self):
-        return self.context.getProperty('accept', '')
-    def set_accept(self, value):
-        return self.context.setMemberProperties({'accept': value})
-    accept = property(get_accept, set_accept)
+    def get_nome(self):
+        return self.context.getProperty('nome', '')
+    def set_nome(self, value):
+        return self.context.setMemberProperties({'nome': value})
+    nome = property(get_nome, set_nome)
+    def get_cognome(self):
+        return self.context.getProperty('cognome', '')
+    def set_cognome(self, value):
+        return self.context.setMemberProperties({'cognome': value})
+    cognome = property(get_cognome, set_cognome)
+    def get_ragionesociale(self):
+        return self.context.getProperty('ragionesociale', '')
+    def set_ragionesociale(self, value):
+        return self.context.setMemberProperties({'ragionesociale': value})
+    ragionesociale = property(get_ragionesociale, set_ragionesociale)
+    def get_piva(self):
+        return self.context.getProperty('piva', '')
+    def set_piva(self, value):
+        return self.context.setMemberProperties({'piva': value})
+    piva = property(get_piva, set_piva)
+    def get_codfis(self):
+        return self.context.getProperty('codfis', '')
+    def set_codfis(self, value):
+        return self.context.setMemberProperties({'codfis': value})
+    codfis = property(get_codfis, set_codfis)
+    def get_indirizzo(self):
+        return self.context.getProperty('indirizzo', '')
+    def set_indirizzo(self, value):
+        return self.context.setMemberProperties({'indirizzo': value})
+    indirizzo = property(get_indirizzo, set_indirizzo)
+    def get_comune(self):
+        return self.context.getProperty('comune', '')
+    def set_comune(self, value):
+        return self.context.setMemberProperties({'comune': value})
+    comune = property(get_comune, set_comune)
+    def get_provincia(self):
+        return self.context.getProperty('provincia', '')
+    def set_provincia(self, value):
+        return self.context.setMemberProperties({'provincia': value})
+    provincia = property(get_provincia, set_provincia)
+    def get_cap(self):
+        return self.context.getProperty('cap', '')
+    def set_cap(self, value):
+        return self.context.setMemberProperties({'cap': value})
+    cap = property(get_cap, set_cap)    
+    def get_telefono(self):
+        return self.context.getProperty('telefono', '')
+    def set_telefono(self, value):
+        return self.context.setMemberProperties({'telefono': value})
+    telefono = property(get_telefono, set_telefono)
+    def get_pec(self):
+        return self.context.getProperty('pec', '')
+    def set_pec(self, value):
+        return self.context.setMemberProperties({'pec': value})
+    pec = property(get_pec, set_pec)

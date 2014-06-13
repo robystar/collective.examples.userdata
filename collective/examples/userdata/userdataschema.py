@@ -6,7 +6,7 @@ from zope.interface import implements
 from collective.examples.userdata import _
 
 
-gender_options = SimpleVocabulary([
+codfis_options = SimpleVocabulary([
     SimpleTerm(value='Male', title=_(u'Male')),
     SimpleTerm(value='Female', title=_(u'Female')),
     ])
@@ -28,67 +28,69 @@ class IEnhancedUserDataSchema(IUserDataSchema):
     """ Use all the fields from the default user data schema, and add various
     extra fields.
     """
-    firstname = schema.TextLine(
-        title=_(u'label_firstname', default=u'First name'),
-        description=_(u'help_firstname',
-                      default=u"Fill in your given name."),
+    nome = schema.TextLine(
+        title=_(u'label_nome', default=u'Nome'),
+        description=_(u'help_nome',
+                      default=u"Indicare il nome."),
         required=False,
         )
-    lastname = schema.TextLine(
-        title=_(u'label_lastname', default=u'Last name'),
-        description=_(u'help_lastname',
-                      default=u"Fill in your surname or your family name."),
+    cognome = schema.TextLine(
+        title=_(u'label_cognome', default=u'Cognome'),
+        description=_(u'help_cognome',
+                      default=u"Indicare il cognome."),
         required=False,
         )
-    gender = schema.Choice(
-        title=_(u'label_gender', default=u'Gender'),
-        description=_(u'help_gender',
-                      default=u"Are you a girl or a boy?"),
-        vocabulary = gender_options,
+    ragionesociale = schema.TextLine(
+        title=_(u'label_ragionesociale', default=u'Ragione sociale'),
+        description=_(u'help_ragionesociale',
+                      default=u"Indicare la ragione sociale delle ditta come compare nella registrazione in Camera di Commercio."),
         required=False,
         )
-    birthdate = schema.Date(
-        title=_(u'label_birthdate', default=u'birthdate'),
-        description=_(u'help_birthdate',
-            default=u'Your date of birth, in the format dd-mm-yyyy'),
+    codfis = schema.TextLine(
+        title=_(u'label_codfis', default=u'Codice Fiscale'),
+        description=_(u'help_codfis',
+                      default=u"Indicare il codice fiscale."),
         required=False,
         )
-    birthyear = schema.TextLine(
-        title=_(u'label_birthyear', default=u'Year of birth'),
-        description=_(u'help_birthyear',
-                      default=u"Your birth year, in the format YYYY."),
+    piva = schema.TextLine(
+        title=_(u'label_piva', default=u'Partita IVA'),
+        description=_(u'help_piva',
+                      default=u"Indicare la partita iva."),
         required=False,
         )
-    city = schema.TextLine(
-        title=_(u'label_city', default=u'City'),
-        description=_(u'help_city',
-                      default=u"Fill in the city you live in."),
+    indirizzo = schema.TextLine(
+        title=_(u'label_indirizzo', default=u'Sede legale azienda'),
+        description=_(u'help_indirizzo',
+                      default=u"Indicare l'indirizzo della sede legale."),
         required=False,
         )
-    country = schema.TextLine(
-        title=_(u'label_country', default=u'Country'),
-        description=_(u'help_country',
-                      default=u"Fill in the country you live in."),
+    comune = schema.TextLine(
+        title=_(u'label_comune', default=u'Comune'),
+        description=_(u'help_comune',
+                      default=u"Indicare il Comune della sede legale."),
         required=False,
         )
-    phone = schema.TextLine(
-        title=_(u'label_phone', default=u'Telephone number'),
-        description=_(u'help_phone',
-                      default=u"Leave your phone number so we can reach you."),
+    provincia = schema.TextLine(
+        title=_(u'label_provincia', default=u'Provincia'),
+        description=_(u'help_provincia',
+                      default=u"Indicare la Provincia della sede legale."),
         required=False,
         )
-    newsletter = schema.Bool(
-        title=_(u'label_newsletter', default=u'Subscribe to newsletter'),
-        description=_(u'help_newsletter',
-                      default=u"If you tick this box, we'll subscribe you to "
-                        "our newsletter."),
+    telefono = schema.TextLine(
+        title=_(u'label_telefono', default=u'Telefono/Cell'),
+        description=_(u'help_telefono',
+                      default=u"Indicare un recapito telefonico."),
         required=False,
         )
-    accept = schema.Bool(
-        title=_(u'label_accept', default=u'Accept terms of use'),
-        description=_(u'help_accept',
-                      default=u"Tick this box to indicate that you have found,"
-                      " read and accepted the terms of use for this site. "),
-        required=True,
-        constraint=validateAccept,
+    cap = schema.TextLine(
+        title=_(u'label_cap', default=u'CAP'),
+        description=_(u'help_cap',
+                      default=u"Indicare il CAP."),
+        required=False,
+        )    
+    pec = schema.TextLine(
+        title=_(u'label_pec', default=u'PEC'),
+        description=_(u'help_pec',
+                      default=u"Indicare un indirizzo di posta elettronica certificato."),
+        required=False,
         )

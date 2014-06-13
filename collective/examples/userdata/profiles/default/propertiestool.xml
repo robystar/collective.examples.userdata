@@ -4,8 +4,17 @@
   <!-- Fields that will be added to the form after installation of the product
   -->
   <property name="user_registration_fields" type="lines" purge="False">
-   <element value="country" />
-   <element value="accept" />
+   <element value="nome" />
+   <element value="cognome" />
+   <element value="ragionesociale" />
+   <element value="codfis" />
+   <element value="piva" />
+   <element value="indirizzo" />
+   <element value="comune" />
+   <element value="provincia" />
+   <element value="cap" />
+   <element value="telefono" />
+   <element value="pec" />
   </property>
  </object>
 </object>

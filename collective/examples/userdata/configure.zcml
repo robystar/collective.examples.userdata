@@ -8,9 +8,9 @@
 
   <genericsetup:registerProfile
       name="default"
-      title="Enhanced user data"
+      title="Estensione scheda di registrazione"
       directory="profiles/default"
-      description='Adds user data fields to the registration form.'
+      description='Aggiunge i campi alla scheda di registrazione.'
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
 

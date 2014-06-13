@@ -1,11 +1,11 @@
 from setuptools import setup, find_packages
 import os
 
-version = '0.5.dev0'
+version = '0.4'
 
 setup(name='collective.examples.userdata',
       version=version,
-      description="Showcase for the new (Plone 4) plone.app.users IUserDataSchema. Shows how to extend the user data fields that can be selected for the registration form.",
+      description="Estende i campi di registrazione per il portale Fondimpresa Liguria.",
       long_description=open("README.rst").read() + "\n" +
                        open(os.path.join("docs", "HISTORY.txt")).read() + "\n"
                        + open(os.path.join("docs", "TODO.txt")).read(),
@@ -25,7 +25,7 @@ setup(name='collective.examples.userdata',
       zip_safe=False,
       install_requires=[
           'setuptools',
-          'plone.app.users >= 2.0',
+          'plone.app.users >= 1.0b7',
           # -*- Extra requirements: -*-
       ],
       entry_points="""
