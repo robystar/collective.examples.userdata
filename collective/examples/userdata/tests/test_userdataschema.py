@@ -1,5 +1,5 @@
 from collective.examples.userdata.testing import FunctionalTestCase
-from datetime import datetime
+
 from plone.app.testing import TEST_USER_ID, setRoles
 
 import transaction
@@ -136,56 +136,18 @@ class TestUserDataSchema(FunctionalTestCase):
         setRoles(portal, TEST_USER_ID, ['Manager'])
         transaction.commit()
 
-        yr = str(datetime.now().year - 5)  # widget will only go back 10 years
+
         browser = self.getBrowser('/@@personal-information')
-        browser.getControl('E-mail').value = 'beth@example.com'
-        browser.getControl(name='form.widgets.firstname').value = 'Beth'
-        browser.getControl(name='form.widgets.lastname').value = 'Orton'
-        browser.getControl(name='form.widgets.gender').value = ['Female']
-        browser.getControl(name='form.widgets.birthdate-day').value = ['15']
-        browser.getControl(name='form.widgets.birthdate-month').value = ['3']
-        browser.getControl(name='form.widgets.birthdate-year').value = [yr]
-        browser.getControl(name='form.widgets.city').value = 'Norwich'
-        browser.getControl(name='form.widgets.country').value = 'UK'
-        browser.getControl(name='form.widgets.phone').value = '012345'
+
         browser.getControl(
-            name='form.widgets.newsletter:list'
+            name='form.widgets.privacy:list'
         ).value = ['selected']
         browser.getControl('Save').click()
         self.assertTrue('Changes saved.' in browser.contents)
 
         # Should be able to retrieve values when page is reloaded
         browser.open(portal.absolute_url() + '/@@personal-information')
+        
         self.assertEquals(
-            browser.getControl('E-mail').value,
-            'beth@example.com')
-        self.assertEquals(
-            browser.getControl(name='form.widgets.firstname').value,
-            'Beth')
-        self.assertEquals(
-            browser.getControl(name='form.widgets.lastname').value,
-            'Orton')
-        self.assertEquals(
-            browser.getControl(name='form.widgets.gender').value,
-            ['Female'])
-        self.assertEquals(
-            browser.getControl(name='form.widgets.birthdate-day').value,
-            ['15'])
-        self.assertEquals(
-            browser.getControl(name='form.widgets.birthdate-month').value,
-            ['3'])
-        self.assertEquals(
-            browser.getControl(name='form.widgets.birthdate-year').value,
-            [yr])
-        self.assertEquals(
-            browser.getControl(name='form.widgets.city').value,
-            'Norwich')
-        self.assertEquals(
-            browser.getControl(name='form.widgets.country').value,
-            'UK')
-        self.assertEquals(
-            browser.getControl(name='form.widgets.phone').value,
-            '012345')
-        self.assertEquals(
-            browser.getControl(name='form.widgets.newsletter:list').value,
+            browser.getControl(name='form.widgets.privacy:list').value,
             ['selected'])
