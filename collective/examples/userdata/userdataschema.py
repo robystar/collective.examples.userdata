@@ -1,6 +1,6 @@
 import datetime
 
-from DateTime.DateTime import DateTime
+
 from zope.interface import Interface
 from zope.component import adapts
 from zope import schema
@@ -10,7 +10,7 @@ from z3c.form import field
 from z3c.form.browser.radio import RadioFieldWidget
 
 from plone.supermodel import model
-from plone.formwidget.datetime.z3cform.widget import DateFieldWidget
+
 from plone.app.users.browser.account import AccountPanelSchemaAdapter
 from plone.app.users.browser.userdatapanel import UserDataPanel
 from plone.app.users.browser.register import RegistrationForm, AddUserForm
@@ -46,16 +46,6 @@ class IEnhancedUserDataSchema(model.Schema):
 class EnhancedUserDataSchemaAdapter(AccountPanelSchemaAdapter):
     schema = IEnhancedUserDataSchema
 
-    def get_birthdate(self):
-        bd = self._getProperty('birthdate')
-        return None if bd == '' else bd.asdatetime().date()
-
-    def set_birthdate(self, value):
-        return self._setProperty('birthdate',
-            DateTime(datetime.datetime(value.year, value.month, value.day,
-                                       0, 0)))
-
-    birthdate = property(get_birthdate, set_birthdate)
 
 
 class UserDataPanelExtender(extensible.FormExtender):

@@ -5,7 +5,7 @@
     i18n_domain="collective.examples.userdata">
 
   <i18n:registerTranslations directory="locales" />
-  <include package="plone.formwidget.datetime" />
+
 
   <genericsetup:registerProfile
       name="default"
