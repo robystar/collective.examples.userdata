@@ -5,13 +5,32 @@
     i18n_domain="collective.examples.userdata">
 
   <i18n:registerTranslations directory="locales" />
+  <include package="plone.formwidget.datetime" />
 
   <genericsetup:registerProfile
       name="default"
-      title="Estensione scheda di registrazione"
+      title="Enhanced user data"
       directory="profiles/default"
-      description='Aggiunge i campi alla scheda di registrazione.'
+      description='Adds user data fields to the registration form.'
       provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+  <adapter
+      factory=".userdataschema.UserDataPanelExtender"
+      provides="plone.z3cform.fieldsets.interfaces.IFormExtender" />
+
+  <adapter
+      factory=".userdataschema.RegistrationPanelExtender"
+      provides="plone.z3cform.fieldsets.interfaces.IFormExtender" />
+
+  <adapter
+      factory=".userdataschema.AddUserFormExtender"
+      provides="plone.z3cform.fieldsets.interfaces.IFormExtender" />
+
+  <adapter
+      provides=".userdataschema.IEnhancedUserDataSchema"
+      for="plone.app.layout.navigation.interfaces.INavigationRoot"
+      factory=".userdataschema.EnhancedUserDataSchemaAdapter"
       />
 
 </configure>

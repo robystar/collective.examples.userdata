@@ -1,6 +1,31 @@
 Changelog
 =========
 
+2.2 (unreleased)
+----------------
+
+- Nothing changed yet.
+
+
+2.1 (2014-07-03)
+----------------
+
+- Fix broken setup.py so we generate documentation & install properly again.
+  [lentinj]
+
+
+2.0 (2014-07-03)
+----------------
+
+- Convert to show customisation of z3c.form-based plone.app.users.
+  [lentinj, vipod, thet]
+
+0.5 (unreleased)
+----------------
+
+- Nothing changed yet.
+
+
 0.4 (2013-12-18)
 ----------------
 

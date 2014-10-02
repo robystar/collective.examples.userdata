@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<layers>
+  <layer
+      name="collective.examples.userdata"
+      interface="collective.examples.userdata.interfaces.IUserDataExamplesLayer"
+      />
+</layers>
